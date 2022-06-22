@@ -1,0 +1,35 @@
+servlet:
+  multipart:
+    max-file-size: 10MB
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  jpa:
+    #    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        show-sql: true
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        enable_lazy_load_no_trans: true
+        generate_statistics: false
+        format_sql: true
+        jdbc:
+        lob:
+        non_contextual_creation: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/interview3
+    username: postgres
+    password: postgres
+  security:
+    oauth2:
+      resourceserve:
+        jwt:
+          signing-key: BK6MzbC2Ls3pfJKM
+
+
